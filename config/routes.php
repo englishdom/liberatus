@@ -28,5 +28,29 @@
 
 /** @var \Zend\Expressive\Application $app */
 
-$app->get('/', App\Action\HomePageAction::class, 'home');
-$app->get('/api/ping', App\Action\PingAction::class, 'api.ping');
+/**
+ * Check token
+ */
+$app->get(
+    '/check[/]',
+    Liberatus\Action\CheckAction::class,
+    'check'
+);
+
+/**
+ * Login
+ */
+$app->post(
+    '/login',
+    App\Action\PingAction::class,
+    'login'
+);
+
+/**
+ * Registration
+ */
+$app->post(
+    '/registration',
+    '',
+    'registration'
+);
