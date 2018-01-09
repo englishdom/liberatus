@@ -2,7 +2,7 @@
 
 namespace Liberatus;
 
-use Liberatus\Action\CheckAction;
+use Liberatus\Action\RefreshAction;
 
 class ConfigProvider
 {
@@ -22,7 +22,7 @@ class ConfigProvider
     {
         return [
             'factories'  => [
-                CheckAction::class => Factory\CheckActionFactory::class,
+                RefreshAction::class => Factory\CheckActionFactory::class,
             ]
         ];
     }

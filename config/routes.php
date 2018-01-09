@@ -32,25 +32,29 @@
  * Check token
  */
 $app->get(
-    '/check[/]',
-    Liberatus\Action\CheckAction::class,
+    '/refresh[/]',
+    Liberatus\Action\RefreshAction::class,
     'check'
 );
 
 /**
  * Login
  */
+/*
 $app->post(
     '/login',
-    App\Action\PingAction::class,
+    '',
     'login'
 );
+*/
 
 /**
  * Registration
  */
+/*
 $app->post(
     '/registration',
     '',
     'registration'
 );
+*/
