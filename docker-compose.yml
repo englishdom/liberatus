@@ -2,6 +2,7 @@ version: '2'
 
 services:
     mysql:
+        container_name: liberatus_mysql
         image: mysql:5.7
         ports:
             - 3306:3306
@@ -15,6 +16,7 @@ services:
             MYSQL_DATABASE: docker
 
     nginx:
+        container_name: liberatus_nginx
         image: nginx:1.10.2
         ports:
             - 80:80
@@ -28,6 +30,7 @@ services:
             - php
 
     php:
+        container_name: liberatus_php
         build: docker/php
         expose:
             - 9000
