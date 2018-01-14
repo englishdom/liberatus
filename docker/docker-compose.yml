@@ -23,7 +23,7 @@ services:
         restart: always
         volumes:
             - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
-            - ./:/var/www/html
+            - ../:/var/www/html
         links:
             - php
         depends_on:
@@ -37,7 +37,7 @@ services:
         restart: always
         volumes:
             - ./php/conf/php.ini:/usr/local/etc/php/conf.d/custom.ini
-            - ./:/var/www/html
+            - ../:/var/www/html
         links:
             - mysql
         environment:

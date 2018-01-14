@@ -17,7 +17,7 @@ build: ## Build project
 
 init: ## Init project. Install composer
 	docker exec -it $(PROJECT_NAME)_php composer install
-	cp .env.example .env
+	cp ../.env.example ../.env
 
 up: ## Start docker containers
 	docker-compose up -d
