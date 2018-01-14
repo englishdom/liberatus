@@ -1,8 +1,8 @@
-version: '2'
+version: '3'
 
 services:
     mysql:
-        container_name: liberatus_mysql
+        container_name: ${PROJECT_NAME}_mysql
         image: mysql:5.7
         ports:
             - 3306:3306
@@ -16,13 +16,13 @@ services:
             MYSQL_DATABASE: docker
 
     nginx:
-        container_name: liberatus_nginx
+        container_name: ${PROJECT_NAME}_nginx
         image: nginx:1.10.2
         ports:
             - 80:80
         restart: always
         volumes:
-            - ./docker/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
             - ./:/var/www/html
         links:
             - php
@@ -30,15 +30,15 @@ services:
             - php
 
     php:
-        container_name: liberatus_php
-        build: docker/php
+        container_name: ${PROJECT_NAME}_php
+        build: php
         expose:
             - 9000
         restart: always
         volumes:
-            - ./docker/php/conf/php.ini:/usr/local/etc/php/conf.d/custom.ini
+            - ./php/conf/php.ini:/usr/local/etc/php/conf.d/custom.ini
             - ./:/var/www/html
         links:
             - mysql
         environment:
-            XDEBUG_CONFIG: remote_host=192.168.0.101
+            XDEBUG_CONFIG: remote_host=${LOCAL_IP}

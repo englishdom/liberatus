@@ -1,3 +1,5 @@
+include .env
+
 # HELP
 # This will output the help for each task
 # thanks to https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
@@ -14,7 +16,7 @@ build: ## Build project
 	docker-compose build
 
 init: ## Init project. Install composer
-	docker exec -it liberatus_php composer install
+	docker exec -it $(PROJECT_NAME)_php composer install
 	cp .env.example .env
 
 up: ## Start docker containers
@@ -30,4 +32,4 @@ start: ## Start existing containers
 	docker-compose start
 
 console: ## Connect to container
-	docker exec -it liberatus_php bash
+	docker exec -it $(PROJECT_NAME)_php bash
