@@ -16,6 +16,7 @@ build: ## Build project
 	docker-compose build
 
 init: ## Init project. Install composer
+	docker exec -it $(PROJECT_NAME)_php composer global require hirak/prestissimo
 	docker exec -it $(PROJECT_NAME)_php composer install
 	cp ../.env.example ../.env
 

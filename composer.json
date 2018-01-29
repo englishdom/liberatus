@@ -3,7 +3,7 @@
     "description": "Zend expressive skeleton. Begin developing PSR-7 middleware applications in seconds!",
     "type": "project",
     "homepage": "https://github.com/zendframework/zend-expressive-skeleton",
-    "license": "BSD-3-Clause",
+    "license": "Apache-2.0",
     "config": {
         "sort-packages": true
     },
