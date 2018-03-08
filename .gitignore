@@ -1,7 +1,6 @@
 .idea
 composer.phar
 .env
-!docker/.env
 
 clover.xml
 coveralls-upload.json
