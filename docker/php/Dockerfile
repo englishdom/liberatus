@@ -1,6 +1,6 @@
 FROM php:7.1-fpm
 
-RUN apt-get update
+RUN apt-get update \
    && apt-get install -y --no-install-recommends \
        libcurl4-openssl-dev \
        libicu-dev \
@@ -14,7 +14,7 @@ RUN apt-get update
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php \
    && mv composer.phar /usr/local/bin/composer \
-   && chmod +x /usr/local/bin/composer
+   && chmod +x /usr/local/bin/composer \
    && composer global require hirak/prestissimo
 
 #xDebug
