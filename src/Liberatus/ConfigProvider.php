@@ -22,7 +22,7 @@ class ConfigProvider
     {
         return [
             'factories'  => [
-                RefreshAction::class => Factory\CheckActionFactory::class,
+//                RefreshAction::class => Factory\CheckActionFactory::class,
             ]
         ];
     }

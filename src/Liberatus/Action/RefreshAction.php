@@ -16,6 +16,7 @@ class RefreshAction implements ActionInterface
      */
     public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
     {
+        var_dump('ok'); die();
         $item = new Item($do, new CheckTransformer(), $this->getResourceName($do));
 
         $request = $request

@@ -1,5 +1,5 @@
 # Liberatus
-PHP Microservice for authorization, registration and validate JWT
+PHP Microservice for validation JWT
  
 ## Set up
 ### Docker
