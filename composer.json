@@ -3,7 +3,7 @@
     "description": "Zend expressive skeleton. Begin developing PSR-7 middleware applications in seconds!",
     "type": "project",
     "homepage": "https://github.com/zendframework/zend-expressive-skeleton",
-    "license": "BSD-3-Clause",
+    "license": "Apache-2.0",
     "config": {
         "sort-packages": true
     },
@@ -19,6 +19,7 @@
         "zendframework/zend-expressive": "^2.0.5",
         "zendframework/zend-expressive-fastroute": "^2.0",
         "zendframework/zend-expressive-helpers": "^4.0",
+        "zendframework/zend-http": "^2.7",
         "zendframework/zend-log": "^2.9",
         "zendframework/zend-servicemanager": "^3.3",
         "zendframework/zend-stdlib": "^3.1"

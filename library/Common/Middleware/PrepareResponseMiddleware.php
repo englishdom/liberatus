@@ -51,16 +51,16 @@ class PrepareResponseMiddleware implements MiddlewareInterface
         if (in_array($httpCode, [HttpResponse::STATUS_CODE_204, HttpResponse::STATUS_CODE_400])) {
             return $response;
         }
-
         $fractal = $request->getAttribute(ActionInterface::RESPONSE);
-        if (!$fractal instanceof Item && !$fractal instanceof Collection) {
-            throw new RuntimeException('Unsupported type');
-        }
 
         /* Set META info */
         $meta = $request->getAttribute(ActionInterface::META);
         if (!empty($meta) && is_array($meta)) {
             $fractal->setMeta($meta);
+        }
+
+        if (!$fractal instanceof Item && !$fractal instanceof Collection && empty($meta)) {
+            throw new RuntimeException('Unsupported type');
         }
 
         $fractalManager = new Manager();
